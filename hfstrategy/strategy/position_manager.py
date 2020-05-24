@@ -217,9 +217,7 @@ class PositionManager(object):
     @param market_type
     """
     symbol = symbol or self.symbol
-    # check for open positions
-    if self.get_position(symbol) != None:
-      raise PositionError('A position already exists for %s' % (symbol))
+
     position = Position(symbol, stop=stop, target=target, tag=tag)
     self._add_position(position)
 
